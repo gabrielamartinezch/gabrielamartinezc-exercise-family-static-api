@@ -41,10 +41,11 @@ class FamilyStructure:
 
     def delete_member(self, id):
         # Fill this method and update the return
-        # buscar el elemento cuyo id sea igual al row['id']
-        #    si lo enentra lo elimna
-        # del self._members
-        return id
+        for member in self._members:
+            if member['id'] == id:
+                self._members.remove(member)
+                return {'done': True}
+        return {'done': False}
 
     def get_member(self, id):
         # Opción 1 - for in
